@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.viewController;
+package co.edu.uniquindio.poo.view;
 /**
  * Sample Skeleton for 'LoginAdministrador.fxml' Controller Class
  */
@@ -44,7 +44,7 @@ import javafx.fxml.FXML;
  
     public void setApp(App app) {
         this.app = app;
-        this.controller = new LoginAdministradorController(app.getSistemaConcesionario(), this);
+        this.controller = new LoginAdministradorController(app.getSistemaConcesionario());
         txterror.setVisible(false);
     }
      @FXML
@@ -60,7 +60,7 @@ import javafx.fxml.FXML;
             Administrador administrador = controller.verificarCredenciales(usuario, contraseña);
             if (administrador != null) {
                 app.setAdministradorAutenticado(administrador);
-                app.openSecondaryAdmView();
+                app.openSecondaryAdministradorViewController();
             } else {
                 txterror.setText("Credenciales incorrectas.");
                 txterror.setVisible(true);

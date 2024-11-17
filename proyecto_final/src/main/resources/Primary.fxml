@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="575.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="buttonAdministrador" layoutX="148.0" layoutY="379.0" mnemonicParsing="false" onAction="#cargarAdministrador" text="Login Administrador " />
+      <Button fx:id="buttonEmpleado" layoutX="357.0" layoutY="379.0" mnemonicParsing="false" onAction="#cargarEmpleado" text="Login Empleado" />
+      <Text layoutX="271.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consesionario " />
+      <Text layoutX="299.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="inicio" />
+   </children>
+</Pane>

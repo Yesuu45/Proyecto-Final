@@ -1,4 +1,4 @@
-package co.edu.uniquindio.poo.viewController;
+package co.edu.uniquindio.poo.view;
 
 /**
  * Sample Skeleton for 'Primary.fxml' Controller Class
