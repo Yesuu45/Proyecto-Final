@@ -1,54 +1,54 @@
 package co.edu.uniquindio.poo.model;
 
-public class Sedan extends Vehiculo {
 
-    private int numeroPasajero;
-    private int numeroPuerta;
+public class Sedan extends VehiculoElectrico{
+    private int numeroPasajeros;
+    private int numeroPuertas;
     private int capacidadMaletero;
     private boolean aireAcondicionado;
     private boolean camaraReserva;
     private boolean velocidadCrucero;
     private int numeroBolsasAire;
-    private boolean suspencionAdaptiva; // suspencion adaptiva son las siglas ADS
-    private boolean sensoresColision;
-    private boolean sensoresTraficoCruzado;
-    private boolean asistentePermanenciaCaril;
+    private boolean abs; // supencion adaptivisa
+    private boolean sensorColision;
+    private boolean SensorTraaficoCruzado;
+    private boolean asistenciaPermanenciaCarril;
     
-    public Sedan(String marca, boolean nuevo, String modelo, Trasmision trasmision, String velocidadMaxima,
-            String cilindraje, int numeroCambios, Combustible combustible, double autonomiaCargaCompleta,
-            double tiempoCargaPromedio, boolean esEnchufable, boolean esHibridoLigero, int numeroPasajero,
-            int numeroPuerta, int capacidadMaletero, boolean aireAcondicionado, boolean camaraReserva,
-            boolean velocidadCrucero, int numeroBolsasAire, boolean suspencionAdaptiva, boolean sensoresColision,
-            boolean sensoresTraficoCruzado, boolean asistentePermanenciaCaril) {
-        super(marca, nuevo, modelo, trasmision, velocidadMaxima, cilindraje, numeroCambios, combustible,
-                autonomiaCargaCompleta, tiempoCargaPromedio, esEnchufable, esHibridoLigero);
-        this.numeroPasajero = numeroPasajero;
-        this.numeroPuerta = numeroPuerta;
+    public Sedan(String marca, String modelo, String matricula, int cambios, double velocidadMaxima, int cilindraje,
+            boolean esNuevo, Trasmision trasmision, double precio, boolean disponible, RevisionTecnica revisionTecnica,
+            double autonomiaCarga, double tiemploPromedioCarga, int numeroPasajeros, int numeroPuertas,
+            int capacidadMaletero, boolean aireAcondicionado, boolean camaraReserva, boolean velocidadCrucero,
+            int numeroBolsasAire, boolean abs, boolean sensorColision, boolean sensorTraaficoCruzado,
+            boolean asistenciaPermanenciaCarril) {
+        super(marca, modelo, matricula, cambios, velocidadMaxima, cilindraje, esNuevo, trasmision, precio, disponible,
+                revisionTecnica, autonomiaCarga, tiemploPromedioCarga);
+        this.numeroPasajeros = numeroPasajeros;
+        this.numeroPuertas = numeroPuertas;
         this.capacidadMaletero = capacidadMaletero;
         this.aireAcondicionado = aireAcondicionado;
         this.camaraReserva = camaraReserva;
         this.velocidadCrucero = velocidadCrucero;
         this.numeroBolsasAire = numeroBolsasAire;
-        this.suspencionAdaptiva = suspencionAdaptiva;
-        this.sensoresColision = sensoresColision;
-        this.sensoresTraficoCruzado = sensoresTraficoCruzado;
-        this.asistentePermanenciaCaril = asistentePermanenciaCaril;
+        this.abs = abs;
+        this.sensorColision = sensorColision;
+        SensorTraaficoCruzado = sensorTraaficoCruzado;
+        this.asistenciaPermanenciaCarril = asistenciaPermanenciaCarril;
     }
 
-    public int getNumeroPasajero() {
-        return numeroPasajero;
+    public int getNumeroPasajeros() {
+        return numeroPasajeros;
     }
 
-    public void setNumeroPasajero(int numeroPasajero) {
-        this.numeroPasajero = numeroPasajero;
+    public void setNumeroPasajeros(int numeroPasajeros) {
+        this.numeroPasajeros = numeroPasajeros;
     }
 
-    public int getNumeroPuerta() {
-        return numeroPuerta;
+    public int getNumeroPuertas() {
+        return numeroPuertas;
     }
 
-    public void setNumeroPuerta(int numeroPuerta) {
-        this.numeroPuerta = numeroPuerta;
+    public void setNumeroPuertas(int numeroPuertas) {
+        this.numeroPuertas = numeroPuertas;
     }
 
     public int getCapacidadMaletero() {
@@ -91,37 +91,39 @@ public class Sedan extends Vehiculo {
         this.numeroBolsasAire = numeroBolsasAire;
     }
 
-    public boolean isSuspencionAdaptiva() {
-        return suspencionAdaptiva;
+    public boolean isAbs() {
+        return abs;
     }
 
-    public void setSuspencionAdaptiva(boolean suspencionAdaptiva) {
-        this.suspencionAdaptiva = suspencionAdaptiva;
+    public void setAbs(boolean abs) {
+        this.abs = abs;
     }
 
-    public boolean isSensoresColision() {
-        return sensoresColision;
+    public boolean isSensorColision() {
+        return sensorColision;
     }
 
-    public void setSensoresColision(boolean sensoresColision) {
-        this.sensoresColision = sensoresColision;
+    public void setSensorColision(boolean sensorColision) {
+        this.sensorColision = sensorColision;
     }
 
-    public boolean isSensoresTraficoCruzado() {
-        return sensoresTraficoCruzado;
+    public boolean isSensorTraaficoCruzado() {
+        return SensorTraaficoCruzado;
     }
 
-    public void setSensoresTraficoCruzado(boolean sensoresTraficoCruzado) {
-        this.sensoresTraficoCruzado = sensoresTraficoCruzado;
+    public void setSensorTraaficoCruzado(boolean sensorTraaficoCruzado) {
+        SensorTraaficoCruzado = sensorTraaficoCruzado;
     }
 
-    public boolean isAsistentePermanenciaCaril() {
-        return asistentePermanenciaCaril;
+    public boolean isAsistenciaPermanenciaCarril() {
+        return asistenciaPermanenciaCarril;
     }
 
-    public void setAsistentePermanenciaCaril(boolean asistentePermanenciaCaril) {
-        this.asistentePermanenciaCaril = asistentePermanenciaCaril;
+    public void setAsistenciaPermanenciaCarril(boolean asistenciaPermanenciaCarril) {
+        this.asistenciaPermanenciaCarril = asistenciaPermanenciaCarril;
     }
 
     
+    
+
 }

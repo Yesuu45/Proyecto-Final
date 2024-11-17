@@ -1,0 +1,5 @@
+package co.edu.uniquindio.poo.model;
+
+public enum TipoCamion {
+    CARGALIGERA, CARGAPESADA, ARTICULADO, CISTERNA, FRIGORIFICO, PLATAFORMA, VOLQUETE, PORTACOCHES, GRUA, BASURA;
+}
