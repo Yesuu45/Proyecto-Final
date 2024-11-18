@@ -1,11 +1,6 @@
 package co.edu.uniquindio.poo.model;
 
-/**
- * Autores: Santiago Rodríguez Torres, Oscar Mateo Moreno
- * Fecha: 13/11/2024
- * Licencia: GNU GPL V3
- *
- */
+
 
 public abstract class Transaccion {
     private Empleado empleado;
@@ -15,9 +10,18 @@ public abstract class Transaccion {
     private String codigo;
 
     public Transaccion(
-        String codigo) {
+            String codigo) {
         this.codigo = codigo;
     }
+
+    /**
+     * Procesa la transacción.
+     *
+     * @param cliente  Cliente involucrado.
+     * @param vehiculo Vehículo involucrado.
+     * @param empleado Empleado que procesa.
+     */
+    public abstract void procesar(SistemaConcesionario sitema, Cliente cliente, Vehiculo vehiculo, Empleado empleado);
 
     public Empleado getEmpleado() {
         return empleado;
@@ -55,22 +59,20 @@ public abstract class Transaccion {
         return codigo;
     }
 
+
+
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
-    protected abstract double getMonto();
+    public abstract double getMonto();
 
-    protected abstract String getTipo();
+    public abstract String getTipo();
 
-    /**
-     * Procesa la transacción.
-     *
-     * @param cliente  Cliente involucrado.
-     * @param vehiculo Vehículo involucrado.
-     * @param empleado Empleado que procesa.
-     */
-    public abstract void procesar(SistemaConcesionario sitema, Cliente cliente, Vehiculo vehiculo, Empleado empleado);
-
+    @Override
+    public String toString() {
+        return "Transaccion [empleado=" + empleado + ", cliente=" + cliente + ", vehiculo=" + vehiculo + ", sistema="
+                + sistema + ", codigo=" + codigo + "]";
+    }
 
 }

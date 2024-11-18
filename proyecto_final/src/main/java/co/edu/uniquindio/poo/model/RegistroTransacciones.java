@@ -40,6 +40,17 @@ public class RegistroTransacciones {
 
     }
 
+    public boolean eliminarTransaccion(String codigo){
+        boolean sentinela = false;
+        for (Transaccion transaccion : transacciones) {
+            if(transaccion.getCodigo().equals(codigo)){
+                transacciones.remove(transaccion);
+                return sentinela = true;
+            }
+            
+        } return sentinela; 
+    }
+
     /*
      * Metodos Get  y Set
      */

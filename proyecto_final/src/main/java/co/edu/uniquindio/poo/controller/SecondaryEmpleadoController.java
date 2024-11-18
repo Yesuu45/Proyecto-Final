@@ -1,21 +1,22 @@
 package co.edu.uniquindio.poo.controller;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.uniquindio.poo.model.Cliente;
 import co.edu.uniquindio.poo.model.Empleado;
-import co.edu.uniquindio.poo.model.SistemaConcesionario;
 import co.edu.uniquindio.poo.model.Transaccion;
-import co.edu.uniquindio.poo.model.TransaccionAlquiler;
-import co.edu.uniquindio.poo.model.TransaccionCompra;
-import co.edu.uniquindio.poo.model.TransaccionVenta;
+import co.edu.uniquindio.poo.model.SistemaConcesionario;
+import co.edu.uniquindio.poo.model.TAlquiler;
+import co.edu.uniquindio.poo.model.TCompra;
+import co.edu.uniquindio.poo.model.TVenta;
 import co.edu.uniquindio.poo.model.Vehiculo;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+
 public class SecondaryEmpleadoController {
+
     private Empleado empleado;
     private SistemaConcesionario sistema;
     private ObservableList<Cliente> clientesObservable;
@@ -143,7 +144,7 @@ public class SecondaryEmpleadoController {
      * Obtiene la lista de vehículos asociados a un cliente específico.
      */
     public ObservableList<Vehiculo> getVehiculosPorCliente(Cliente cliente) {
-        vehiculosClienteObservable.setAll(sistema.getVehiculos(cliente));
+        vehiculosClienteObservable.setAll(sistema.getVehiculosCliente(cliente));
         return vehiculosClienteObservable;
     }
 
@@ -153,10 +154,10 @@ public class SecondaryEmpleadoController {
     public void procesarTransaccion(String codigo, Cliente cliente, Vehiculo vehiculo, Empleado empleado, String tipo) {
         switch (tipo) {
             case "Compra":
-                sistema.getRegistro().getTransacciones().add(new TransaccionCompra(codigo));
+                sistema.getRegistro().getTransacciones().add(new TCompra(codigo));
                 break;
             case "Alquiler":
-                sistema.getRegistro().getTransacciones().add(new TransaccionAlquiler(codigo, 7)); // Ejemplo con 7 días.
+                sistema.getRegistro().getTransacciones().add(new TAlquiler(codigo, 7)); // Ejemplo con 7 días.
                 break;
             case "Venta":
                 // Implementar lógica para venta si es necesario.
@@ -256,15 +257,15 @@ public class SecondaryEmpleadoController {
 
         switch (tipoTransaccion) {
             case "Alquiler":
-                Transaccion transaccion = new TransaccionAlquiler(codigo, dias);
+                Transaccion transaccion = new TAlquiler(codigo, dias);
                 transaccion.procesar(sistema, cliente, vehiculo, empleado);
                 break;
             case "Compra":
-                Transaccion transaccion2 = new TransaccionCompra(codigo);
+                Transaccion transaccion2 = new TCompra(codigo);
                 transaccion2.procesar(sistema, cliente, vehiculo, empleado);
                 break;
             case "Venta":
-                Transaccion transaccion3 = new TransaccionVenta(codigo);
+                Transaccion transaccion3 = new TVenta(codigo);
                 transaccion3.procesar(sistema, cliente, vehiculo, empleado);
                 break;
             default:

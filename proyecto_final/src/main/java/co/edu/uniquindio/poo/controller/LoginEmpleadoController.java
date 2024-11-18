@@ -1,25 +1,31 @@
 package co.edu.uniquindio.poo.controller;
 
 import co.edu.uniquindio.poo.model.SistemaConcesionario;
+import co.edu.uniquindio.poo.view.LoginEmpleadoView;
 import javafx.scene.control.Label;
 
 public class LoginEmpleadoController {
     private SistemaConcesionario sistemaConcesionario;
-    private LoginEmpleadoViewController LoginEmpleadoViewController ;
+    private LoginEmpleadoView view;
 
-    public boolean verificarEmpleadoCuenta(String Usuario, String contraseña) {
-        return sistemaConcesionario.verificarEmpleadoCuenta(Usuario, contraseña);
+    public LoginEmpleadoController(SistemaConcesionario sistemaConcesionario, LoginEmpleadoView view) {
+        this.sistemaConcesionario = sistemaConcesionario;
+        this.view = view;
     }
 
-    public void handleIngresar(String Usuario, String contraseña, Label txterror) {
-        if (Usuario.isEmpty() || contraseña.isEmpty()) {
-            txterror.setText("Por favor, ingrese todos los datos.");
+    public boolean verificarEmpleadoCuenta(String nombreUsuario, String contraseña) {
+        return sistemaConcesionario.verificarEmpleadoCuenta(nombreUsuario, contraseña);
+    }
+
+    public void handleIngresar(String nombreUsuario, String password, Label labelError) {
+        if (nombreUsuario.isEmpty() || password.isEmpty()) {
+            labelError.setText("Por favor, ingrese todos los datos.");
         } else {
-            if (verificarEmpleadoCuenta(Usuario, contraseña)) {
-                txterror.setText("");
+            if (verificarEmpleadoCuenta(nombreUsuario, password)) {
+                labelError.setText("");
                 view.openSecondaryEmpleado();
             } else {
-                txterror.setText("Credenciales incorrectas.");
+                labelError.setText("Credenciales incorrectas.");
             }
         }
     }
@@ -28,5 +34,16 @@ public class LoginEmpleadoController {
         return sistemaConcesionario;
     }
 
-    
+    public void setSistemaConcesionario(SistemaConcesionario sistemaConcesionario) {
+        this.sistemaConcesionario = sistemaConcesionario;
+    }
+
+    public LoginEmpleadoView getView() {
+        return view;
+    }
+
+    public void setView(LoginEmpleadoView view) {
+        this.view = view;
+    }
+
 }
